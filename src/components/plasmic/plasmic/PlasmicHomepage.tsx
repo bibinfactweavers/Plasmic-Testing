@@ -34,7 +34,6 @@ import {
 import TextInput from "../../TextInput"; // plasmic-import: lM7uxk50AAV/component
 import Button2 from "../../Button2"; // plasmic-import: Y2T8I2DKDKS/component
 import { DataFetcher } from "@plasmicpkgs/plasmic-query"; // plasmic-import: ae7V86eNoXA/codeComponent
-import Slider from "react-slick"; // plasmic-import: HOQUyOpClJ/codeComponent
 
 import { useScreenVariants as useScreenVariantsbvi6AlUwBvXDc } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Bvi6alUwBvXDc/globalVariant
 
@@ -62,7 +61,7 @@ export type PlasmicHomepage__OverridesType = {
   textInput?: p.Flex<typeof TextInput>;
   search?: p.Flex<typeof Button2>;
   button?: p.Flex<"button">;
-  slider?: p.Flex<typeof Slider>;
+  h1?: p.Flex<"h1">;
   columns?: p.Flex<"div">;
   column?: p.Flex<"div">;
   link?: p.Flex<"a">;
@@ -306,111 +305,34 @@ function PlasmicHomepage__RenderFunc(props: {
               </p.Stack>
             </p.Stack>
 
-            <div className={classNames(projectcss.all, sty.freeBox__tok28)}>
-              {true ? (
-                <div className={classNames(projectcss.all, sty.freeBox__lj6F)}>
-                  <DataFetcher
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__vhf7T
+              )}
+            >
+              <React.Fragment>
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <h1
+                    data-plasmic-name={"h1"}
+                    data-plasmic-override={overrides.h1}
                     className={classNames(
-                      "__wab_instance",
-                      sty.httpApiFetcher__si2BM
+                      projectcss.all,
+                      projectcss.h1,
+                      projectcss.__wab_text,
+                      sty.h1
                     )}
-                    dataName={"fetchedData" as const}
-                    errorDisplay={
-                      <ph.DataCtxReader>
-                        {$ctx => "Error fetching data"}
-                      </ph.DataCtxReader>
-                    }
-                    headers={{
-                      "Content-Type": "application/json",
-                      Accept: "application/json"
-                    }}
-                    loadingDisplay={
-                      <ph.DataCtxReader>
-                        {$ctx => "Loading..."}
-                      </ph.DataCtxReader>
-                    }
-                    method={"GET" as const}
-                    noLayout={false}
-                    url={"https://dummyjson.com/products" as const}
                   >
-                    <ph.DataCtxReader>
-                      {$ctx => (
-                        <Slider
-                          data-plasmic-name={"slider"}
-                          data-plasmic-override={overrides.slider}
-                          autoplay={true}
-                          autoplaySpeed={1000 as const}
-                          className={classNames("__wab_instance", sty.slider)}
-                        >
-                          <p.PlasmicImg
-                            alt={""}
-                            className={classNames(sty.img__bmIse)}
-                            displayHeight={"100%" as const}
-                            displayMaxHeight={"none" as const}
-                            displayMaxWidth={"100%" as const}
-                            displayMinHeight={"0" as const}
-                            displayMinWidth={"0" as const}
-                            displayWidth={"auto" as const}
-                            src={(() => {
-                              try {
-                                return $ctx.fetchedData.products[0].images[0];
-                              } catch (e) {
-                                if (e instanceof TypeError) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()}
-                          />
+                    {"Prproducts"}
+                  </h1>
+                }
+                <React.Fragment>{""}</React.Fragment>
+              </React.Fragment>
+            </div>
 
-                          <p.PlasmicImg
-                            alt={""}
-                            className={classNames(sty.img__fdrVc)}
-                            displayHeight={"auto" as const}
-                            displayMaxHeight={"none" as const}
-                            displayMaxWidth={"100%" as const}
-                            displayMinHeight={"0" as const}
-                            displayMinWidth={"0" as const}
-                            displayWidth={"auto" as const}
-                            src={(() => {
-                              try {
-                                return $ctx.fetchedData.products[1].thumbnail;
-                              } catch (e) {
-                                if (e instanceof TypeError) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()}
-                          />
-
-                          <p.PlasmicImg
-                            alt={""}
-                            className={classNames(sty.img__aiNq5)}
-                            displayHeight={"auto" as const}
-                            displayMaxHeight={"none" as const}
-                            displayMaxWidth={"100%" as const}
-                            displayMinHeight={"0" as const}
-                            displayMinWidth={"0" as const}
-                            displayWidth={"auto" as const}
-                            src={(() => {
-                              try {
-                                return $ctx.fetchedData.products[4].thumbnail;
-                              } catch (e) {
-                                if (e instanceof TypeError) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()}
-                          />
-                        </Slider>
-                      )}
-                    </ph.DataCtxReader>
-                  </DataFetcher>
-                </div>
-              ) : null}
-
+            <div className={classNames(projectcss.all, sty.freeBox__tok28)}>
               <div
                 data-plasmic-name={"columns"}
                 data-plasmic-override={overrides.columns}
@@ -658,7 +580,7 @@ const PlasmicDescendants = {
     "textbox",
     "search",
     "button",
-    "slider",
+    "h1",
     "columns",
     "column",
     "link"
@@ -666,7 +588,7 @@ const PlasmicDescendants = {
   textInput: ["textInput", "textbox"],
   search: ["search"],
   button: ["button"],
-  slider: ["slider"],
+  h1: ["h1"],
   columns: ["columns", "column", "link"],
   column: ["column", "link"],
   link: ["link"]
@@ -679,7 +601,7 @@ type NodeDefaultElementType = {
   textInput: typeof TextInput;
   search: typeof Button2;
   button: "button";
-  slider: typeof Slider;
+  h1: "h1";
   columns: "div";
   column: "div";
   link: "a";
@@ -749,7 +671,7 @@ export const PlasmicHomepage = Object.assign(
     textInput: makeNodeComponent("textInput"),
     search: makeNodeComponent("search"),
     button: makeNodeComponent("button"),
-    slider: makeNodeComponent("slider"),
+    h1: makeNodeComponent("h1"),
     columns: makeNodeComponent("columns"),
     column: makeNodeComponent("column"),
     link: makeNodeComponent("link"),
