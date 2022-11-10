@@ -164,6 +164,7 @@ function PlasmicDetails__RenderFunc(props: {
                     data-plasmic-name={"back"}
                     data-plasmic-override={overrides.back}
                     className={classNames("__wab_instance", sty.back)}
+                    color={"softGreen" as const}
                     link={`/`}
                   >
                     {"BACK"}

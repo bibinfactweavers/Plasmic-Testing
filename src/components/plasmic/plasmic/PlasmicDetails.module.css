@@ -6,8 +6,12 @@
   height: 100%;
   padding-top: 30px;
   padding-bottom: 42px;
+  transition-property: all;
+  transition-duration: 1s;
   min-width: 0;
   min-height: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 1s;
 }
 .freeBox {
   display: flex;

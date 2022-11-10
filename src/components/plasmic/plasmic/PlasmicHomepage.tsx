@@ -394,16 +394,16 @@ function PlasmicHomepage__RenderFunc(props: {
                                 projectcss.a,
                                 sty.link
                               )}
-                              href={`/details/${(() => {
+                              href={(() => {
                                 try {
-                                  return currentItem.id;
+                                  return "/details/" + currentItem.id;
                                 } catch (e) {
                                   if (e instanceof TypeError) {
-                                    return "[id]";
+                                    return `/details/${"pid"}`;
                                   }
                                   throw e;
                                 }
-                              })()}`}
+                              })()}
                             >
                               <p.PlasmicImg
                                 alt={""}
@@ -682,7 +682,7 @@ export const PlasmicHomepage = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "HomePage",
       description: "",
       ogImageSrc: "",
       canonical: ""
